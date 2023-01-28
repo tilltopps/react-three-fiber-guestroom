@@ -17,3 +17,25 @@ npx gltfjsx walls.gltf
 ```
 
  Note: this creates a JavaScript file hence allowJs is set to true in tsconfig.json.
+
+
+## Models
+
+Models are my own or Public Domain, downloaded from https://poly.pizza.
+
+### Entrance
+- Couch by CMHT Oculus [CC-BY] via Poly Pizza
+
+### Bedroom
+- Chair by Poly by Google [CC-BY] via Poly Pizza
+- Bed King byQuaternius
+- Closet byQuaternius
+
+### Kitchen
+- Fridge and Cooker by Jakers_H [CC-BY] via Poly Pizza
+- Kitchen Fridge Small byKenney
+- Kitchen Sink byKenney
+- Oven by jeremy [CC-BY] via Poly Pizza
+
+### Outside
+- Garden Lounger by Dave Edwards [CC-BY] via Poly Pizza

@@ -4,6 +4,14 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Stage, useGLTF } from '@react-three/drei'
 import { Mesh } from 'three'
 import * as Walls from './Walls'
+import * as BedKing from './BedKing'
+import * as Couch from './Couch'
+import * as Closet from './Closet'
+import * as FridgeAndCooker from './FridgeAndCooker'
+import * as KitchenFridgeSmall from './KitchenFridgeSmall'
+import * as KitchenSink from './KitchenSink'
+import * as Oven from './Oven'
+import * as GardenLounger from './GardenLounger'
 
 function Astronaut(props: JSX.IntrinsicElements['mesh']) {
   const gltf = useGLTF('https://thinkuldeep.com/modelviewer/Astronaut.glb')
@@ -46,9 +54,27 @@ export default function App() {
           <ambientLight color={0x404040} intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />
-          <Box scale={0.1} position={[0, 0.1, -1.2]} />
+          {/* <Box scale={0.1} position={[0, 0.1, -1.2]} /> */}
           <GuestroomWalls />
-          <Astronaut scale={0.1} position={[0.13, 0, -0.7]} rotation={[0, 2, 0]} />
+          <group name="Entrance">
+            <Couch.Model scale={0.0031} position={[0.73, 0, 0.38]} rotation={[0, Math.PI / 2, 0]} />
+          </group>
+          <group name="Bedroom">
+            <BedKing.Model scale={0.056} position={[0.29, 0, -0.12]} rotation={[0, -Math.PI / 2, 0]} />
+            <Closet.Model scale={0.06} position={[0.036, 0, -0.062]} rotation={[0, Math.PI / 2, 0]} />
+            <Closet.Model scale={0.06} position={[0.036, 0, -0.162]} rotation={[0, Math.PI / 2, 0]} />
+          </group>
+          <group name="Kitchen">
+            {/* <Oven.Model scale={0.006} position={[0.381, 0, -0.63]} rotation={[0, -Math.PI / 2, 0]} /> */}
+            {/* <KitchenFridgeSmall.Model scale={0.1} position={[0.371, 0, -0.77]} rotation={[0, Math.PI / 2, 0]} /> */}
+            <FridgeAndCooker.Model scale={0.029} position={[0.371, 0.127, -0.67]} rotation={[0, Math.PI / 2, 0]} />
+            {/* <KitchenSink.Model scale={0.12} position={[0.357, 0, -0.72]} rotation={[0, Math.PI / 2, 0]} /> */}
+          </group>
+          <group name="Garden">
+            <GardenLounger.Model scale={0.0024} position={[0.311, 0, -1.06]} rotation={[0, (14.3 * Math.PI) / 10, 0]} />
+            <GardenLounger.Model scale={0.0024} position={[0.391, 0, -1.07]} rotation={[0, (14.9 * Math.PI) / 10, 0]} />
+          </group>
+          <Astronaut scale={0.1} position={[0.14, 0, -0.65]} rotation={[0, 2.5, 0]} />
         </Stage>
       </Suspense>
       <OrbitControls ref={ref} autoRotate />
