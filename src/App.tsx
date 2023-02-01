@@ -73,7 +73,7 @@ export default function App() {
           <GuestroomWalls />
           <GuestroomFloor scale={0.05} position={[0.07, 0, -0.40]} rotation={[-Math.PI / 2, 0, 0]} />
           <group name="Entrance">
-            <Couch.Model scale={0.0031} position={[0.73, 0, 0.38]} rotation={[0, Math.PI / 2, 0]} />
+            <Couch.Model scale={0.0031} position={[-0.34, 0, -1.48]} rotation={[0, -Math.PI / 2, 0]} />
           </group>
           <group name="Bedroom">
             <BedKing.Model scale={0.056} position={[0.29, 0, -0.12]} rotation={[0, -Math.PI / 2, 0]} />
